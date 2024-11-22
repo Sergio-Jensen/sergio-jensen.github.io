@@ -2,7 +2,7 @@
 title:          "Knowledge complexity based on coupled equations within the bipartite network"
 date:           2024-06-12 00:01:00 +0800
 selected:       true
-pub:            <a href="https://www.sciencedirect.com/journal/information-sciences" target="_blank">Information Sciences</a>
+pub:            "Information Sciences"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
 pub_last:       ' <span class="badge badge-pill badge-publication badge-success">1<sup>st</sup> & corr. author</span>'
