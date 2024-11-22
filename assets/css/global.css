@@ -68,11 +68,11 @@ div.lazy {
 }
 
 .smallcaps {
-font-variant: small-caps
+    font-variant: small-caps
 }
 
-.smallcaps2{
-    font-variant: small-caps
-    font-size: 0.5em
+.ssmallcaps {
+    font-variant: small-caps;
+    font-size: 0.5em;
     color: #f00
 }
