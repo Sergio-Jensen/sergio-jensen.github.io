@@ -2,7 +2,7 @@
 title:          "Is Productive Service Intermediate Input a good instrument for enhancing the Global Value Chain participation?"
 # date:           2024-06-13 00:01:00 +0800
 selected:       false
-pub:            "China Economic Review"
+pub:            "Structural Change and Economic Dynamics"
 # pub_pre:        "Submitted to "
 pub_post:       ' (Under review)'
 pub_last:       ' <span class="badge badge-pill badge-publication badge-success">1<sup>st</sup> & corr. author</span>'
