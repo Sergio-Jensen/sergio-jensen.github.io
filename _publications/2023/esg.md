@@ -11,7 +11,7 @@ pub_date:       "May 2024"
 
 abstract: >-
   This article selects state-owned enterprises listed on the A-share market of China from 2010 to 2021 as the research sample, and adopts the Ordered Logistic Model to analyze the relationship between digital transformation (DX) and environment, social and governance (ESG) performance of enterprises, and studies the moderating effect of mixed-ownership reform. The study found that: the DX of state-owned enterprises can indeed improve ESG performance, and its time lag effect is significant; for state-owned enterprises located in high-tech industries, with higher level of marketization, or in the maturity stage, their DX has a significant promoting effect on ESG performance; In addition, mixed-ownership reform can amplify the positive impact of DX of state-owned enterprises on ESG performance.
-cover:          /assets/images/covers/cover_esg.png
+cover:          /assets/images/covers/cover_esg.jpg
 authors:
   - Shenshen Zhang
 links:
