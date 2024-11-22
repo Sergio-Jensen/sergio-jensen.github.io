@@ -7,7 +7,6 @@ pub:            "Information Sciences"
 # pub_post:       'Under review.'
 pub_last:       ' <span class="badge badge-pill badge-publication badge-success">1<sup>st</sup> & corr. author</span>'
 pub_vol:        "Vol.677"
-# pub_no:         "No."
 pub_date:       "2024"
 pub_pp:         "120937"
 
