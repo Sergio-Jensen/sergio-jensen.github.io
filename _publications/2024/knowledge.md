@@ -16,4 +16,6 @@ authors:
 links:
   DOI: https://doi.org/10.1016/j.ins.2024.120937
   PDF: /assets/paper/ins-2024-knowledge.pdf
+  Code: /assets/code/ins-2024-knowledge.R
+  Dataset: /assets/data/ins-2024-knowledge.zip
 ---
