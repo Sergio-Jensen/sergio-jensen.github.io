@@ -11,6 +11,7 @@ email: "sergio.z@sjtu.edu.cn"
 cv_link: /assets/cv/CV.pdf
 gscholar: GLXepnkAAAAJ  # This is an example, replace it with your own Google Scholar ID
 orcid: 0000-0003-3271-3796
+wos: GWR-3265-2022
 researchgate: Sin-Som-Tsiong
 github: Sergio-Jensen
 #twitter: your_twitter_id  # Do not include the '@' symbol
@@ -27,8 +28,8 @@ short_bio: >-
   from Shanghai International Studies University.
   </p>
   <p>
-  My research interests focus on <strong>Econometrics</strong>, <strong>Complex Network</strong>, <strong>International Economics</strong>, and 
-  <strong>Quantitative Politics</strong>.
+  My research interests focus on <strong>International Economics</strong>, <strong>Complex Network</strong>, 
+  <strong>Econometrics</strong>, <strong>International Organization</strong>, and <strong>Computational Politics</strong>.
   </p>
 
 portrait_url: /assets/images/photos/portrait.png
