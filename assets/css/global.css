@@ -77,7 +77,7 @@ div.lazy {
     color: gray;
 }
 .zoomimage {
-    background-image: url(/assets/images/background.jpg);
+    background-image: url('assets/images/background.jpg');
     background-repeat: no-repeat;
     background-size: 100%;
     -moz-background-size: 100% 100%;
