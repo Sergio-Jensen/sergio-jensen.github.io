@@ -5,7 +5,7 @@ selected:       true
 pub:            "Corporate Social Responsibility and Environmental Management"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
-pub_last:       ' <span class="badge badge-pill badge-publication badge-success">1<sup>st</sup> author</span>'
+pub_last:       ' <span class="badge badge-pill badge-publication badge-success">1<sup>st</sup> & corr. author</span>'
 pub_vol:        "Vol.31"
 pub_no:         "No.3"
 pub_date:       "2024"
