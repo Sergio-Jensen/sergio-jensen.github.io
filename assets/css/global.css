@@ -1,5 +1,9 @@
 @charset "utf-8";
 body {
+    background-image: url('images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    -moz-background-size: 100% 100%;
     font-family: "Lato", sans-serif;
     font-weight: 400;
     padding-top: 5.0rem;
@@ -75,10 +79,4 @@ div.lazy {
     font-variant: small-caps;
     font-size: 50%;
     color: gray;
-}
-zoomimage {
-    background-image: url('images/background.jpg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    -moz-background-size: 100% 100%;
 }
