@@ -14,7 +14,7 @@
             {% assign pubinfo = {{item.pub_pre}}<i>{{ item.pub }}</i>{{ item.pub_post }} %}
             {%- if info[item.pub_post]==true -%}
             pubinfo +=, {{ item.pub_vol }}
-            <p class="mt-0 mb-0 small">pubinfo, {{ item.pub_no },} {{ item.pub_date }}: {{ item.pub_pp }} {{ item.pub_last }}</p>
+            <p class="mt-0 mb-0 small">{{pubinfo}}, {{ item.pub_no }}, {{ item.pub_date }}: {{ item.pub_pp }} {{ item.pub_last }}</p>
             <p class="mt-0 mb-0 small text-muted">{{ item.abstract }}</p>
             
             <p class="small pb-0 mb-0 lh-125 text-muted abstract-links">
