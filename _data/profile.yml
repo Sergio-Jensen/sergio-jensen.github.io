@@ -31,18 +31,24 @@ short_bio: >-
   </p>
 
 portrait_url: /assets/images/photos/portrait.jpg
-portrait_caption: >-
-  Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
+#portrait_caption: >-
+  #Photo by Manja Vitolic on Unsplash (this caption is optional, comment it out to disable).
 
 education:
 - name: Shanghai Jiao Tong University
-  logo: /assets/images/badges/MIT_Social_circle.png
+  logo: /assets/images/badges/SJTU.png
   position: >- 
     School of International and Public Affairs <br/>
     Ph.D.-Student in International Relations
   date: Sep. 2024 - present
+- name: Shanghai International Studies University
+  logo: /assets/images/badges/SISU.png
+  position: >- 
+    School of International and Public Affairs <br/>
+    M.S. in International Business
+  date: Sep. 2021 - Jul. 2023
 - name: Nankai University
-  logo: /assets/images/badges/PKU_red.png
+  logo: /assets/images/badges/NKU.png
   position: B.S. in Applied Chemistry
   date: Sep. 2017 - Jul. 2021
 
@@ -53,9 +59,9 @@ education:
 #   date: Sep. 2019 - Jul. 2021
 
 awards:
-- name: Award Name 2
-  date: 2024
-- name: Award Name 1 
-  date: 2021
-- name: A quick brown fox jumps over the lazy dog and runs away award
-  date: 2021
+- name: 30<sup>th</sup> Chinese Chemistry Olympiad (CChO) - 1<sup>st</sup> Prize
+  date: 2016
+- name: 33<sup>rd</sup> Chinese Physics Olympiad (CPhO) - 3<sup>rd</sup> Prize
+  date: 2016
+- name: 25<sup>th</sup> China High School Biology Olympiad (CHSBO) - 2<sup>nd</sup> Prize
+  date: 2016
