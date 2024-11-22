@@ -71,8 +71,14 @@
                         {% endif %}
 
                         {% if site.data.profile.wos %}
-                        <a class="pr-3 no-break" target="_blank" href="webofscience.clarivate.cn/wos/author/record/{{ site.data.profile.wos }}">
+                        <a class="pr-3 no-break" target="_blank" href="https://webofscience.clarivate.cn/wos/author/record/{{ site.data.profile.wos }}">
                             <i class="fab fa-clarivate"></i> webofscience
+                        </a>
+                        {% endif %}
+
+                        {% if site.data.profile.scopus %}
+                        <a class="pr-3 no-break" target="_blank" href="https://www.scopus.com/authid/detail.uri?authorId={{ site.data.profile.scopus }}">
+                            <i class="fab fa-scopus"></i> Scopus
                         </a>
                         {% endif %}
 
