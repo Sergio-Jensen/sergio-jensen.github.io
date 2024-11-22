@@ -1,5 +1,5 @@
 ---
-title:          "How does complex knowledge promote regional economic growth within the “Belt and Road”?"
+title:          "Are both quantity and quality of green innovation exalted in polluting firms under environmental regulation?"
 # date:           2024-06-13 00:01:00 +0800
 selected:       false
 pub:            "China Economic Review"
