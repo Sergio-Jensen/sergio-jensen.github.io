@@ -2,7 +2,7 @@
 title:          "Governmental Venture Capital Funds Honeys Sustainable Investment"
 # date:           2024-06-13 00:01:00 +0800
 selected:       false
-pub:            "business Strategy and the Environment"
+pub:            "Business Strategy and the Environment"
 pub_pre:        "Submitted to "
 # pub_post:       ' (Under review)'
 pub_last:       ' <span class="badge badge-pill badge-publication badge-success">2<sup>nd</sup> author</span>'
