@@ -22,13 +22,13 @@ wechat_prompt: >-
 short_bio_text_justify: false
 short_bio: >-
   <p>
-  I am a Ph.D.-student at the School of International and Public Affairs, Shanghai Jiao Tong University. I have obtained 
+  I am a Ph.D.-student of International Relationships in Shanghai Jiao Tong University. I have obtained 
   a Bachelor's Degree of Applied Chemistry from Nankai University, and obtained a Master's Degree of International Business 
   from Shanghai International Studies University.
   </p>
   <p>
-  My research interests focus on <bold>Econometrics</bold>, <bold>Complex Network</bold>, <bold>International Economics</bold>, and 
-  <bold>Quantitative Politics</bold>.
+  My research interests focus on <strong>Econometrics</strong>, <strong>Complex Network</strong>, <strong>International Economics</strong>, and 
+  <strong>Quantitative Politics</strong>.
   </p>
 
 portrait_url: /assets/images/photos/portrait.png
