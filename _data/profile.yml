@@ -49,7 +49,9 @@ education:
   date: Sep. 2021 - Jul. 2023
 - name: Nankai University
   logo: /assets/images/badges/NKU.png
-  position: B.S. in Applied Chemistry
+  position: >-
+    College of Chemistry <br/>
+    B.S. in Applied Chemistry
   date: Sep. 2017 - Jul. 2021
 
 # experience:
