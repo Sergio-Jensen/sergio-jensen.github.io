@@ -1,6 +1,5 @@
 ---
-title:          "The impact of digital transformation on ESG performance and the moderation of mixed-ownership reform: The evidence from Chinese state-owned enterprises
-Shenshen Zhang"
+title:          "The impact of digital transformation on ESG performance and the moderation of mixed-ownership reform: The evidence from Chinese state-owned enterprises"
 date:           2023-12-12 00:01:00 +0800
 selected:       true
 pub:            "Corporate Social Responsibility and Environmental Management"
