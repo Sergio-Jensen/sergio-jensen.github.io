@@ -3,9 +3,8 @@ secondary_name: ""
 navbar_name: "Sin-Som (Sergio) Tsiong"
 
 positions:
-- logo: /assets/images/badges/MIT_Social_circle.png  # Logo is optional
-  name: Position 1 with logo
-- name: Position 2 without logo
+- logo: /assets/images/badges/SJTU.png  # Logo is optional
+  name: Shanghai Jiao Tong University
 
 
 email: "sergio.z@sjtu.edu.cn"
