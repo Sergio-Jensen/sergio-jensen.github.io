@@ -5,7 +5,7 @@ selected:       true
 pub:            "Information Sciences"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
-pub_last:       ' <span class="badge badge-pill badge-publication badge-success">1<sup>st</sup></span>'
+pub_last:       ' <span class="badge badge-pill badge-publication badge-success">1<sup>st</sup> author</span>'
 pub_date:       "Aug. 2024"
 
 abstract: >-
