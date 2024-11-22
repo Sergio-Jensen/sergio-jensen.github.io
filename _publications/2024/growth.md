@@ -1,7 +1,7 @@
 ---
-title:          "Knowledge complexity based on coupled equations within the bipartite network"
+title:          "How does complex knowledge promote regional economic growth within the ``Belt and Road''?"
 # date:           2024-06-12 00:01:00 +0800
-selected:       true
+selected:       false
 pub:            "Journal of the Knowledge Economy"
 # pub_pre:        "Submitted to "
 pub_post:       ' (Under review)'
