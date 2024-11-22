@@ -1,9 +1,5 @@
 @charset "utf-8";
 body {
-    background-image: url('images/background.jpg');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    -moz-background-size: 100% 100%;
     font-family: "Lato", sans-serif;
     font-weight: 400;
     padding-top: 5.0rem;
@@ -79,4 +75,12 @@ div.lazy {
     font-variant: small-caps;
     font-size: 50%;
     color: gray;
+}
+.bg {
+    background: url('images/background.jpg');
+    background-size: cover;
+    width: 100%;  
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
