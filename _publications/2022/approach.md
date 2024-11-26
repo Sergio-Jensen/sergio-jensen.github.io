@@ -7,7 +7,7 @@ pub:            "Applied Economics Letters"
 # pub_post:       'Under review.'
 pub_last:       ' <span class="badge badge-pill badge-publication badge-success">1<sup>st</sup> & corr. author</span>'
 pub_vol:        "Vol.31, No.2, "
-pub_date:       "2022: "
+pub_date:       "2024: "
 pub_pp:         "146-151."
 
 abstract: >-
