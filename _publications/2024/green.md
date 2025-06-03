@@ -1,6 +1,6 @@
 ---
 title:          "Are both quantity and quality of green innovation exalted in polluting firms under environmental regulation?"
-date:           Working Paper
+# date:           Working Paper
 selected:       false
 pub:            "China Economic Review"
 # pub_pre:        "Submitted to "
