@@ -16,7 +16,6 @@ abstract: >-
 cover:          /assets/images/forthcoming.png
 authors:
   - Shenshen Sergio Zhang
-  - Issac Hsu
   - Mingqian Zhang
 #links:
 
