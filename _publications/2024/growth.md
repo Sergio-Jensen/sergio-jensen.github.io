@@ -2,7 +2,7 @@
 title:          "How does complex knowledge promote regional economic growth within the \"Belt and Road\"?"
 # date:           2024-06-12 00:01:00 +0800
 selected:       false
-pub:            "Journal of the Knowledge Economy"
+pub:            "Review of Development Economics"
 # pub_pre:        "Submitted to "
 pub_post:       ' (Under review)'
 pub_last:       ' <span class="badge badge-pill badge-publication badge-success">1<sup>st</sup> author</span> <span class="badge badge-pill badge-publication badge-success-c">Corr. author</span>
