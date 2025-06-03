@@ -2,8 +2,8 @@
 title:          "Governmental Venture Capital Funds Honeys Sustainable Investment"
 # date:           2024-06-13 00:01:00 +0800
 selected:       false
-pub:            "Business Strategy and the Environment"
-pub_pre:        "Submitted to "
+# pub:            "Business Strategy and the Environment"
+pub_pre:        "Working Paper."
 # pub_post:       ' (Under review)'
 pub_last:       ' <span class="badge badge-pill badge-publication badge-success-2">2<sup>nd</sup> author</span>'
 # pub_vol:        "Vol.677"
@@ -15,7 +15,8 @@ abstract: >-
 cover:          /assets/images/forthcoming.png
 authors:
   - Shuaihang Li
-  - Shenshen Sergio Zhang
+  - Sin-Som Sergio Tsiong
+  - Qing Liu
 #links:
 
 ---
