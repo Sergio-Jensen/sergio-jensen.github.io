@@ -19,5 +19,5 @@ authors:
 links:
   DOI: https://doi.org/10.1016/j.strueco.2025.10.002
   PDF: /assets/paper/sced-2025-participation.pdf
-  SI: /assets/paper/sced-2025-participation-si.pdf
+  SI: /assets/paper/si/sced-2025-participation-si.pdf
 ---
