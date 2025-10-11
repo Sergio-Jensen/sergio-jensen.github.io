@@ -1,5 +1,5 @@
 ---
-title:          "IMF “rescues” populism: How social trust comes into effect?"
+title:          "IMF ``rescues'' populism: How social trust comes into effect?"
 # date:           2024-06-13 00:01:00 +0800
 selected:       false
 pub:            "The Review of International Organizations"
