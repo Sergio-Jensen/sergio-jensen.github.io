@@ -1,7 +1,7 @@
 ---
 title:          "A new approach on measuring the knowledge complexity in the view of the bipartite network"
 date:           2022-09-26 00:01:00 +0800
-selected:       true
+selected:       false
 pub:            "Applied Economics Letters"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
