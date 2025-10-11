@@ -11,7 +11,7 @@ pub_last:       ' <span class="badge badge-pill badge-publication badge-success-
 # pub_pp:         "120937"
 
 abstract: >-
-  In the era of competing for core competence, the increasing inputs of knowledge factors have brought the issue of “efficiency-enhancing and quality-improving” into focus; and concerns about the “quality” perspective of knowledge require mining information related to complex knowledge hidden in the economic system. In order to quantify knowledge complexity at both the national (or regional) and technological levels, this article combines the Fitness and Complexity algorithm with matrix-estimation exercises based on the framework of the bipartite network. On the basis of these measurements, this article analyzes and discusses the economic implications and evolutionary features while considering the “expiration” of patents; additionally, community detection is conducted to discuss the evolution of the “location” of complex knowledge. The results show that knowledge complexity depends on the structural similarity and specialization of patents; furthermore, the timeliness of patents may affect knowledge complexity conspicuously; moreover, the significance of the “location” of complex knowledge in the past has been downplayed over the past few decades.
+  国际货币基金组织（IMF）贷款条件在国际组织和国际政治经济研究中受到广泛关注。既有文献从经济重要性、权力政治、观念、官僚和讨价还价权力视角对IMF贷款条件差异作出了解释。在既有研究基础上，本文提出，借款国拥有的外部选择强度影响其面对IMF的讨价还价权力，即借款国参与的区域金融安排（RFAs）的融资能力越强，其获得的IMF贷款条件越宽松；同时，借款国的节点重要性虽然能够凭借IMF对于“大而不能倒”的担忧进而获得贷款条件的让步，但潜在的金融危机在其所在区域内蔓延的风险反而削弱了区域金融安排的所能给予的讨价还价权力。为考察借款国的外部选择强度与节点重要性如何共同影响其面对IMF的讨价还价权力，本文选取了1995至2019年间取得了IMF贷款的借款国样本数据进行实证检验，并通过分析拉美储备基金成员国与IMF讨价还价过程，展示了上述理论框架的定性证据。
 cover:          /assets/images/forthcoming.png
 authors:
   - Tong Wu
