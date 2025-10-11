@@ -2,7 +2,7 @@
 title:          "Are both quantity and quality of green innovation exalted in polluting firms under environmental regulation?"
 # date:           Working Paper
 selected:       false
-pub:            "China Financial Review International"
+pub:            "International Journal of Finance & Economics"
 # pub_pre:        "Submitted to "
 pub_post:       ' (Under review)'
 pub_last:       ' <span class="badge badge-pill badge-publication badge-success">1<sup>st</sup> author</span> <span class="badge badge-pill badge-publication badge-success-c">Corr. author</span>
