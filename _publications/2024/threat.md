@@ -11,7 +11,7 @@ pub_last:       ' <span class="badge badge-pill badge-publication badge-success-
 # pub_pp:         "120937"
 
 abstract: >-
-国
+a
 cover:          /assets/images/forthcoming.png
 authors:
   - Tong Wu
