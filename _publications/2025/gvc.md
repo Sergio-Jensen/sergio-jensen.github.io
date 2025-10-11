@@ -5,7 +5,7 @@ selected:       true
 pub:            "Structural Change and Economic Dynamics"
 # pub_pre:        "Working Paper"
 # pub_post:       ' (Under review)'
-pub_last:       ' <span class="badge badge-pill badge-publication badge-success">1<sup>st</sup> author</span> 
+pub_last:       ' <span class="badge badge-pill badge-publication badge-success">1<sup>st</sup> author</span>'
 # pub_vol:        "Vol.75, "
 # pub_date:       "2025: "
 # pub_pp:         "638-653."
