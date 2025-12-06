@@ -1,6 +1,6 @@
 ---
 title:          "Located by Geo-political Shock"
-date:           2026-01-01 00:01:00 +0800
+date:           2026-06-13 00:01:00 +0800
 selected:       true
 pub:            "Open Economies Review"
 # pub_pre:        "Submitted to "
