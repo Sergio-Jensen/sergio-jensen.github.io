@@ -16,5 +16,5 @@ cover:          /assets/images/cover-oer.png
 authors:
   - Sin-Som Sergio Tsiong
 #links:
-
+  SI: /assets/paper/si/oer-2025-geopolit-si.pdf
 ---
