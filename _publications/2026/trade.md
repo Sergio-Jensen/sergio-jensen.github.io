@@ -19,5 +19,8 @@ authors:
   - Sin-Som Sergio Tsiong
   - Shuaihang Li
   - Mingqian Zhang
-# links:
+links:
+  DOI: https://doi.org/10.1016/j.chaos.2025.117677
+  PDF: /assets/paper/csf-2025-rethinking.pdf
+  SI: /assets/paper/si/csf-2025-rethinking-si.pdf
 ---
