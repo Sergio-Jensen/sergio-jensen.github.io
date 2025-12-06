@@ -1,7 +1,7 @@
 ---
 title:          "Rethinking the competition of export trade based on the bipartite network"
 date:           2026-01-01 00:01:00 +0800
-selected:       false
+selected:       true
 pub:            "Chaos, Solitons & Fractals"
 # pub_pre:        "Submitted to "
 # pub_post:       ' (Under review)'
