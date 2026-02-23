@@ -1,7 +1,7 @@
 ---
 title:          "How Will Geopolitical Risk Play Its Role in the Global Value Chain"
 date:           2026-02-18 00:01:00 +0800
-selected:       false
+selected:       true
 pub:            "The World Economy"
 # pub_pre:        "Submitted to: "
 # pub_post:       ' (Under review)'
@@ -19,6 +19,6 @@ authors:
   - Lin Sun
 links:
   DOI: https://doi.org/10.1111/twec.70077
-  PDF: /assets/paper/we-2026-geopolit.pdf
-  SI: /assets/paper/si/we-2026-geopolit-si.pdf
+  PDF: /assets/paper/we-2026-geoGVC.pdf
+  SI: /assets/paper/si/we-2026-geoGVC-si.pdf
 ---
