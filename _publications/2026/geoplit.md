@@ -1,13 +1,13 @@
 ---
 title:          "Located by Geo-political Shock"
-date:           2026-06-02 00:01:00 +0800
-selected:       true
-pub:            "Open Economies Review"
+# date:           2026-06-02 00:01:00 +0800
+# selected:       true
+pub:            "Review of World Economics"
 # pub_pre:        "Submitted to "
-# pub_post:       ' (Under review)'
+pub_post:       ' (Under review)'
 pub_last:       ' <span class="badge badge-pill badge-publication badge-success">1<sup>st</sup> author</span> <span class="badge badge-pill badge-publication badge-success-c">Corr. author</span>'
 # pub_vol:        "Vol.677"
-pub_date:       "2026."
+# pub_date:       "2026."
 # pub_pp:         "120937"
 
 abstract: >-
