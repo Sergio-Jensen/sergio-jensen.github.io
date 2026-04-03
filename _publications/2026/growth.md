@@ -1,7 +1,7 @@
 ---
 title:          "How does complex knowledge promote regional economic growth within the \"Belt and Road\"?"
 date:           2026-04-04 00:01:00 +0800
-selected:       false
+selected:       true
 pub:            "Review of Development Economics"
 # pub_pre:        "Submitted to "
 # pub_post:       ' (Under review)'
