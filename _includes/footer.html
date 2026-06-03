@@ -1,0 +1,11 @@
+<footer class="footer">
+    <div class="container">
+        <div class="bauhaus-last-updated" aria-label="Last updated: {{ "now" | date: "%B %Y" }}">
+            <div class="bauhaus-date-digits" aria-hidden="true">
+                {% assign updated_stamp = "now" | date: "%Y%m" %}
+                {% for i in (0..5) %}<span>{{ updated_stamp | slice: i, 1 }}</span>{% endfor %}
+            </div>
+            <div class="bauhaus-date-label">Last Updated</div>
+        </div>
+    </div>
+</footer>
