@@ -1,0 +1,25 @@
+<div class="bauhaus-floating-player" id="bauhaus-player" aria-label="Floating music player">
+    <div class="bauhaus-player-strip" aria-hidden="true"></div>
+    <div class="bauhaus-player-drag" id="bauhaus-player-drag">
+        <span class="bauhaus-player-dot"></span>
+        <span>PLAYER</span>
+    </div>
+    <div class="bauhaus-player-title-row">
+        <div class="bauhaus-track-copy">
+            <span class="bauhaus-track-title" id="bauhaus-track-title">Suite Bergamasque, L. 75, CD 82 III. Clair de Lune</span>
+            <span class="bauhaus-track-author" id="bauhaus-track-author">Jean-Efflam Bavouzet</span>
+        </div>
+        <button type="button" class="bauhaus-list-toggle" id="bauhaus-list-toggle" aria-expanded="false" aria-controls="bauhaus-track-list">LIST</button>
+    </div>
+    <div class="bauhaus-track-list" id="bauhaus-track-list" hidden></div>
+    <div class="bauhaus-player-controls">
+        <button type="button" class="bauhaus-player-button square" id="bauhaus-prev" aria-label="Previous track">&#9664;&#9664;</button>
+        <button type="button" class="bauhaus-player-button play" id="bauhaus-play" aria-label="Play or pause">&#9654;</button>
+        <button type="button" class="bauhaus-player-button square" id="bauhaus-next" aria-label="Next track">&#9654;&#9654;</button>
+        <div class="bauhaus-progress-wrap">
+            <input type="range" id="bauhaus-progress" min="0" max="100" value="0" aria-label="Track progress">
+            <div class="bauhaus-player-time" id="bauhaus-time">0:00</div>
+        </div>
+    </div>
+    <audio id="homepage-audio" autoplay preload="auto" playsinline src="{{ '/assets/audio/%5BJean-Efflam%20Bavouzet%5D%20-%20Suite%20Bergamasque%2C%20L.%2075%2C%20CD%2082%20III.%20Clair%20de%20Lune.mp3' | relative_url }}"></audio>
+</div>
