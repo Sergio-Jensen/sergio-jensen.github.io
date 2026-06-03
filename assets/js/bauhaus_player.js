@@ -167,6 +167,9 @@
                 return null;
             }
             if (url.origin !== window.location.origin) return null;
+            if (url.hash && url.pathname === window.location.pathname && url.search === window.location.search) {
+                return null;
+            }
             var path = url.pathname.replace(/\/+$/, "");
             var base = window.location.pathname.replace(/[^/]*$/, "");
             if (path === base.replace(/\/+$/, "") || /\/index(?:\.html)?$/.test(path)) {
