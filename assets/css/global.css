@@ -1456,12 +1456,12 @@ h2[id="year-"] + .my-0 .row.no-gutters.border-gray::before {
     color: var(--bauhaus-ink) !important;
     height: auto !important;
     min-height: 0 !important;
-    max-height: 17.5rem !important;
+    max-height: 13rem !important;
     overflow: hidden !important;
 }
 
 #bauhaus-player.bauhaus-floating-player.is-list-open {
-    max-height: min(42rem, calc(100vh - 2rem)) !important;
+    max-height: min(31.5rem, calc(100vh - 2rem)) !important;
     overflow: visible !important;
 }
 
