@@ -1454,6 +1454,15 @@ h2[id="year-"] + .my-0 .row.no-gutters.border-gray::before {
     background: var(--bauhaus-white) !important;
     box-shadow: 8px 8px 0 var(--bauhaus-ink) !important;
     color: var(--bauhaus-ink) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 17.5rem !important;
+    overflow: hidden !important;
+}
+
+#bauhaus-player.bauhaus-floating-player.is-list-open {
+    max-height: min(42rem, calc(100vh - 2rem)) !important;
+    overflow: visible !important;
 }
 
 #bauhaus-player .bauhaus-player-title-row {
@@ -1512,6 +1521,11 @@ a.text-body.publication-author-link:hover {
         right: 0.85rem !important;
         bottom: 0.85rem !important;
         width: calc(100vw - 1.7rem) !important;
+        max-height: 18.5rem !important;
+    }
+
+    #bauhaus-player.bauhaus-floating-player.is-list-open {
+        max-height: calc(100vh - 1.7rem) !important;
     }
 
     #bauhaus-player .bauhaus-player-controls {

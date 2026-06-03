@@ -327,6 +327,7 @@
             wantsPlaying = true;
             audio.autoplay = true;
             audio.setAttribute("autoplay", "");
+            audio.setAttribute("muted", "");
             audio.setAttribute("playsinline", "");
             if (firstAutoplayAttempt) {
                 audio.muted = true;
@@ -334,22 +335,25 @@
                 audio.muted = false;
             }
             audio.volume = 1;
+            function restoreSound() {
+                audio.muted = false;
+                audio.removeAttribute("muted");
+                audio.volume = 1;
+            }
             audio.play().then(function() {
                 if (firstAutoplayAttempt) {
-                    window.setTimeout(function() {
-                        audio.muted = false;
-                        audio.volume = 1;
-                    }, 300);
+                    window.setTimeout(restoreSound, 300);
+                    window.setTimeout(restoreSound, 900);
+                    window.setTimeout(restoreSound, 1600);
                 }
                 firstAutoplayAttempt = false;
                 saveState({ playing: true });
             }).catch(function() {
                 audio.muted = true;
                 audio.play().then(function() {
-                    window.setTimeout(function() {
-                        audio.muted = false;
-                        audio.volume = 1;
-                    }, 300);
+                    window.setTimeout(restoreSound, 300);
+                    window.setTimeout(restoreSound, 900);
+                    window.setTimeout(restoreSound, 1600);
                     firstAutoplayAttempt = false;
                     saveState({ playing: true });
                 }).catch(function() {
@@ -458,6 +462,7 @@
 
         listToggle.addEventListener("click", function() {
             trackList.hidden = !trackList.hidden;
+            player.classList.toggle("is-list-open", !trackList.hidden);
             listToggle.setAttribute("aria-expanded", String(!trackList.hidden));
         });
 
@@ -526,6 +531,7 @@
         }, { once: true });
 
         restorePosition();
+        player.classList.toggle("is-list-open", !trackList.hidden);
         if (hasResumeRequest()) {
             wantsPlaying = true;
         }
