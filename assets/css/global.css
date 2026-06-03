@@ -1081,7 +1081,7 @@ h2[id="year-"] + .my-0 .row.no-gutters.border-gray::before {
     bottom: 1.6rem;
     z-index: 1100;
     width: min(34rem, calc(100vw - 2rem));
-    padding: 1rem 1.15rem 1.05rem 2rem;
+    padding: 1rem 1.15rem 1.05rem 1rem;
     border: 5px solid var(--bauhaus-ink);
     background: var(--bauhaus-white);
     box-shadow: 8px 8px 0 var(--bauhaus-ink);
