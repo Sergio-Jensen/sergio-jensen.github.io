@@ -2336,3 +2336,29 @@ a.text-body.publication-author-link:hover {
 .profile-primary-name {
     font-size: 100%;
 }
+
+/* Mobile-only player usability fixes. */
+@media (max-width: 767.98px) {
+    #bauhaus-player.bauhaus-floating-player {
+        touch-action: none !important;
+    }
+
+    #bauhaus-player .bauhaus-track-copy,
+    #bauhaus-player .bauhaus-track-author {
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+
+    #bauhaus-player .bauhaus-track-author {
+        display: block !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+    }
+
+    #bauhaus-player .bauhaus-progress-wrap,
+    #bauhaus-player input,
+    #bauhaus-player button {
+        touch-action: manipulation !important;
+    }
+}
