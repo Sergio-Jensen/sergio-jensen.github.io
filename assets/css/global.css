@@ -429,7 +429,7 @@ a[target="_blank"][href$=".pdf"]:hover,
 /* Bauhaus player v4: flatter, draggable panel with adaptive list direction. */
 #bauhaus-player.bauhaus-floating-player {
     width: min(35rem, calc(100vw - 2rem)) !important;
-    max-height: 13rem !important;
+    max-height: 10rem !important;
     padding: 0.75rem 0.95rem 0.85rem 1.7rem !important;
     cursor: grab;
 }
@@ -1546,8 +1546,9 @@ h2[id="year-"] + .my-0 .row.no-gutters.border-gray::before {
 }
 
 .bauhaus-progress-wrap input[type="range"] {
-    width: 100%;
+    width: 94%;
     height: 0.85rem;
+    margin-left: 1rem;
     border: 4px solid var(--bauhaus-ink);
     background: linear-gradient(90deg, var(--bauhaus-red) 0%, var(--bauhaus-red) var(--progress, 0%), var(--bauhaus-ink) var(--progress, 0%), var(--bauhaus-ink) 100%);
     appearance: none;
@@ -1699,6 +1700,15 @@ h2[id="year-"] + .my-0 .row.no-gutters.border-gray::before {
         grid-area: progress;
     }
 
+    .bauhaus-progress-wrap input[type="range"] {
+    width: 97%;
+    height: 0.85rem;
+    margin-left: 0rem;
+    border: 4px solid var(--bauhaus-ink);
+    background: linear-gradient(90deg, var(--bauhaus-red) 0%, var(--bauhaus-red) var(--progress, 0%), var(--bauhaus-ink) var(--progress, 0%), var(--bauhaus-ink) 100%);
+    appearance: none;
+}
+
     .bauhaus-player-button {
         width: 2.7rem;
         height: 2.7rem;
@@ -1733,7 +1743,7 @@ h2[id="year-"] + .my-0 .row.no-gutters.border-gray::before {
 }
 
 #bauhaus-player.bauhaus-floating-player.is-list-open {
-    max-height: min(31.5rem, calc(100vh - 2rem)) !important;
+    max-height: min(29.5rem, calc(100vh - 2rem)) !important;
     overflow: visible !important;
 }
 
@@ -1811,14 +1821,14 @@ a.text-body.publication-author-link:hover {
 /* Final v4 player guard. Keep this at the end of the file. */
 #bauhaus-player.bauhaus-floating-player {
     width: min(35rem, calc(100vw - 2rem)) !important;
-    max-height: 13rem !important;
+    max-height: 11rem !important;
     padding: 0.75rem 0.95rem 0.85rem 1.7rem !important;
     overflow: hidden !important;
     cursor: grab !important;
 }
 
 #bauhaus-player.bauhaus-floating-player.is-list-open {
-    max-height: min(42rem, calc(100vh - 2rem)) !important;
+    max-height: min(29.5rem, calc(100vh - 2rem)) !important;
     overflow: visible !important;
 }
 
@@ -1833,6 +1843,7 @@ a.text-body.publication-author-link:hover {
     box-shadow: none !important;
     color: var(--bauhaus-ink) !important;
     font-family: Courier, "Courier New", monospace !important;
+    font-size: 16pt;
     font-weight: 900 !important;
     letter-spacing: 0.16em !important;
     text-transform: uppercase !important;
@@ -1845,6 +1856,7 @@ a.text-body.publication-author-link:hover {
     border: 4px solid var(--bauhaus-ink) !important;
     background: var(--bauhaus-yellow) !important;
     box-shadow: 3px 3px 0 var(--bauhaus-ink) !important;
+    margin-right: 1rem !important;
 }
 
 #bauhaus-player .bauhaus-toggle-thumb {
@@ -1875,11 +1887,13 @@ a.text-body.publication-author-link:hover {
 #bauhaus-player .bauhaus-track-title {
     font-size: 0.95rem !important;
     line-height: 1.05 !important;
+    margin-top: 0.5rem !important;
 }
 
 #bauhaus-player .bauhaus-track-author {
-    margin-top: 0.1rem !important;
+    margin-top: 0.3rem !important;
     font-size: 0.78rem !important;
+    margin-bottom: 0.5rem !important;
 }
 
 #bauhaus-player .bauhaus-list-toggle {
@@ -1888,6 +1902,7 @@ a.text-body.publication-author-link:hover {
     border-width: 3px !important;
     box-shadow: 3px 3px 0 var(--bauhaus-ink) !important;
     font-size: 0.8rem !important;
+    margin-top: -1rem;
 }
 
 #bauhaus-player .bauhaus-player-controls {
@@ -1916,6 +1931,14 @@ a.text-body.publication-author-link:hover {
     pointer-events: none !important;
 }
 
+#bauhaus-player .bauhaus-player-button2 img {
+    display: block !important;
+    width: 50% !important;
+    height: 50% !important;
+    object-fit: contain !important;
+    pointer-events: none !important;
+}
+
 #bauhaus-player .bauhaus-progress-wrap {
     grid-template-columns: minmax(7rem, 1fr) 2.65rem !important;
     gap: 0.55rem !important;
@@ -1932,7 +1955,7 @@ a.text-body.publication-author-link:hover {
     top: calc(100% + 0.7rem) !important;
     bottom: auto !important;
     z-index: 1120 !important;
-    max-height: min(18rem, 44vh) !important;
+    max-height: min(13 rem, 44vh) !important;
     margin: 0 !important;
     padding: 0 0.35rem 0 0 !important;
 }
@@ -1957,7 +1980,7 @@ a.text-body.publication-author-link:hover {
 }
 
 #bauhaus-player.is-collapsed {
-    width: min(27rem, calc(100vw - 2rem)) !important;
+    width: min(35rem, calc(100vw - 2rem)) !important;
     max-height: 4.4rem !important;
     padding: 0.6rem 0.75rem 0.65rem 1.35rem !important;
 }
@@ -1980,7 +2003,7 @@ a.text-body.publication-author-link:hover {
 
 #bauhaus-player.is-collapsed .bauhaus-player-controls {
     grid-template-columns: 2.25rem minmax(10rem, 1fr) !important;
-    gap: 0.75rem !important;
+    gap: 0rem !important;
     padding-left: 3.2rem !important;
 }
 
@@ -2053,7 +2076,7 @@ a.text-body.publication-author-link:hover {
     #bauhaus-player .bauhaus-track-list {
         left: 1.25rem !important;
         right: 0.65rem !important;
-        max-height: min(16rem, 48vh) !important;
+        max-height: min(13rem, 48vh) !important;
     }
 
     #bauhaus-player.is-collapsed {
@@ -2067,81 +2090,21 @@ a.text-body.publication-author-link:hover {
     }
 
     #bauhaus-player.is-collapsed .bauhaus-player-controls {
-        grid-template-columns: 1.95rem minmax(0, 1fr) !important;
+        grid-template-columns: 2.25rem minmax(0, 1fr) !important;
         padding-left: 2.75rem !important;
     }
 }
 
-/* Final v5 player guard. Keep this after all prior player rules. */
-#bauhaus-player.bauhaus-floating-player {
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: 10.8rem !important;
-    padding-top: 0.55rem !important;
-    padding-bottom: 0.55rem !important;
-}
-
-#bauhaus-player.bauhaus-floating-player.is-list-open {
-    max-height: min(31rem, calc(100vh - 1.5rem)) !important;
-    overflow: hidden !important;
-}
-
-#bauhaus-player .bauhaus-player-toggle {
-    margin-bottom: 0.28rem !important;
-}
-
-#bauhaus-player .bauhaus-player-title-row {
-    margin-bottom: 0.28rem !important;
-}
-
-#bauhaus-player .bauhaus-track-title {
-    font-size: 0.86rem !important;
-}
-
-#bauhaus-player .bauhaus-track-author {
-    font-size: 0.72rem !important;
-}
-
-#bauhaus-player .bauhaus-player-controls {
-    grid-template-columns: 2rem 2.35rem 2rem minmax(9rem, 1fr) !important;
-    gap: 0.5rem !important;
-}
-
-#bauhaus-player .bauhaus-player-button {
-    width: 2rem !important;
-    height: 2rem !important;
-    padding: 0.28rem !important;
-}
-
-#bauhaus-player .bauhaus-player-button.play {
-    width: 2.35rem !important;
-    height: 2.35rem !important;
-    padding: 0.42rem !important;
-}
-
-#bauhaus-player .bauhaus-player-button img {
-    max-width: 72% !important;
-    max-height: 72% !important;
-    margin: auto !important;
-}
-
-#bauhaus-player .bauhaus-player-button.play img {
-    max-width: 58% !important;
-    max-height: 58% !important;
-}
-
-#bauhaus-player .bauhaus-progress-wrap {
-    grid-template-columns: minmax(7rem, 1fr) 2.35rem !important;
-}
-
+/* v4 list direction fix: keep the list inside the panel, above controls. */
 #bauhaus-player .bauhaus-track-list {
     position: static !important;
     left: auto !important;
     right: auto !important;
     top: auto !important;
     bottom: auto !important;
-    max-height: min(16rem, 42vh) !important;
-    margin: 0 0 0.45rem 0 !important;
+    order: 2 !important;
+    max-height: min(18rem, 44vh) !important;
+    margin: 0 0 0.55rem 0 !important;
     padding: 0 0.35rem 0 0 !important;
 }
 
@@ -2150,43 +2113,226 @@ a.text-body.publication-author-link:hover {
     bottom: auto !important;
 }
 
-#bauhaus-player.is-collapsed {
-    max-height: 3.4rem !important;
+#bauhaus-player .bauhaus-player-toggle {
+    order: 0 !important;
 }
 
+#bauhaus-player .bauhaus-player-title-row {
+    order: 1 !important;
+}
+
+#bauhaus-player .bauhaus-player-controls {
+    order: 3 !important;
+}
+
+/* v4 list content fix: show both title and author in the expanded list. */
+#bauhaus-player .bauhaus-track-list-item small {
+    display: block !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+
+/* Mobile player layout: compact top actions, title row, then controls. */
 @media (max-width: 767.98px) {
     #bauhaus-player.bauhaus-floating-player {
-        max-height: 8.7rem !important;
-        padding-top: 0.45rem !important;
-        padding-bottom: 0.5rem !important;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) auto !important;
+        grid-template-rows: auto auto auto auto !important;
+        column-gap: 0.55rem !important;
+        width: calc(70vw - 1.2rem) !important;
+        max-height: none !important;
+        padding: 0.55rem 0.65rem 0.65rem 1.25rem !important;
+        overflow: hidden !important;
     }
 
     #bauhaus-player.bauhaus-floating-player.is-list-open {
         max-height: calc(100vh - 1.2rem) !important;
+        overflow: visible !important;
     }
 
-    #bauhaus-player .bauhaus-player-controls {
-        grid-template-columns: 1.75rem 1.95rem 1.75rem minmax(0, 1fr) !important;
-        gap: 0.32rem !important;
+    #bauhaus-player .bauhaus-player-toggle {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        justify-self: start !important;
+        align-self: center !important;
+        position: static !important;
+        margin: 0 !important;
+        transform: none !important;
     }
 
-    #bauhaus-player .bauhaus-player-button {
-        width: 1.75rem !important;
-        height: 1.75rem !important;
-        padding: 0.22rem !important;
+    #bauhaus-player .bauhaus-toggle-label {
+        display: none !important;
     }
 
-    #bauhaus-player .bauhaus-player-button.play {
-        width: 1.95rem !important;
-        height: 1.95rem !important;
-        padding: 0.34rem !important;
+    #bauhaus-player .bauhaus-player-title-row {
+        display: contents !important;
+    }
+
+    #bauhaus-player .bauhaus-track-copy {
+        grid-column: 1 / -1 !important;
+        grid-row: 2 !important;
+        min-width: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #bauhaus-player .bauhaus-list-toggle {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        justify-self: end !important;
+        align-self: center !important;
+        height: 1.85rem !important;
+        padding: 0 0.55rem !important;
+        font-size: 0.68rem !important;
+        margin: 0 !important;
+    }
+
+    #bauhaus-player .bauhaus-track-title {
+        font-size: 0.78rem !important;
+        line-height: 1.05 !important;
+    }
+
+    #bauhaus-player .bauhaus-track-author {
+        font-size: 0.68rem !important;
+        line-height: 1.05 !important;
+        margin-top: 0.18rem !important;
     }
 
     #bauhaus-player .bauhaus-track-list {
-        max-height: min(15rem, 48vh) !important;
+        grid-column: 1 / -1 !important;
+        grid-row: 3 !important;
+        order: initial !important;
+        max-height: min(13rem, 42vh) !important;
+        margin: 0 !important;
+        padding-right: 0.3rem !important;
+    }
+
+    #bauhaus-player .bauhaus-player-controls {
+        grid-column: 1 / -1 !important;
+        grid-row: 4 !important;
+        display: grid !important;
+        grid-template-columns: 1.9rem 2.15rem 1.9rem minmax(0, 1fr) !important;
+        grid-template-areas: none !important;
+        align-items: center !important;
+        gap: 0.38rem !important;
+        min-width: 0 !important;
+        padding: 0 !important;
+    }
+
+    #bauhaus-player #bauhaus-prev {
+        grid-area: auto !important;
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+    }
+
+    #bauhaus-player #bauhaus-play {
+        grid-area: auto !important;
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+    }
+
+    #bauhaus-player #bauhaus-next {
+        grid-area: auto !important;
+        grid-column: 3 !important;
+        grid-row: 1 !important;
+    }
+
+    #bauhaus-player .bauhaus-progress-wrap {
+        grid-area: auto !important;
+        grid-column: 4 !important;
+        grid-row: 1 !important;
+    }
+
+    #bauhaus-player .bauhaus-player-button {
+        width: 1.9rem !important;
+        height: 1.9rem !important;
+        min-width: 1.9rem !important;
+        min-height: 1.9rem !important;
+        border-width: 3px !important;
+        padding: 0.18rem !important;
+        box-shadow: 2px 2px 0 var(--bauhaus-ink) !important;
+    }
+
+    #bauhaus-player .bauhaus-player-button.play {
+        width: 2.15rem !important;
+        height: 2.15rem !important;
+        min-width: 2.15rem !important;
+        min-height: 2.15rem !important;
+    }
+
+    #bauhaus-player .bauhaus-progress-wrap {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 2.35rem !important;
+        align-items: center !important;
+        gap: 0.35rem !important;
+        min-width: 0 !important;
+    }
+
+    #bauhaus-player .bauhaus-player-time {
+        font-size: 0.7rem !important;
+    }
+}
+
+/* Mobile player adjustments: list gap and collapsed alignment. */
+@media (max-width: 767.98px) {
+    #bauhaus-player.bauhaus-floating-player.is-list-open .bauhaus-player-controls {
+        margin-top: 0.65rem !important;
     }
 
     #bauhaus-player.is-collapsed {
-        max-height: 3.2rem !important;
+        display: grid !important;
+        grid-template-columns: 2.6rem 2.15rem minmax(0, 1fr) !important;
+        grid-template-rows: auto !important;
+        align-items: center !important;
+        column-gap: 0.65rem !important;
+        width: calc(70vw - 1.2rem) !important;
+        height: auto !important;
+        min-height: 3.35rem !important;
+        padding: 0.55rem 0.65rem 0.55rem 1.25rem !important;
     }
+
+    #bauhaus-player.is-collapsed .bauhaus-player-toggle {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        position: static !important;
+        transform: none !important;
+        margin: 0 !important;
+        justify-self: start !important;
+        align-self: center !important;
+    }
+
+    #bauhaus-player.is-collapsed .bauhaus-player-controls {
+        display: contents !important;
+        padding-left: 0 !important;
+        gap: 0 !important;
+    }
+
+    #bauhaus-player.is-collapsed #bauhaus-play {
+        display: inline-flex !important;
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        justify-self: center !important;
+        align-self: center !important;
+    }
+
+    #bauhaus-player.is-collapsed .bauhaus-progress-wrap {
+        display: grid !important;
+        grid-column: 3 !important;
+        grid-row: 1 !important;
+        align-self: center !important;
+        min-width: 0 !important;
+    }
+}
+
+/* Mobile player restore guard: prevent saved top plus CSS bottom from stretching the panel. */
+@media (max-width: 767.98px) {
+    #bauhaus-player.bauhaus-floating-player:not(.is-list-open):not(.is-collapsed) {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: max-content !important;
+    }
+}
+
+.profile-primary-name {
+    font-size: 100%;
 }

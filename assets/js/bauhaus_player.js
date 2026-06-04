@@ -2,7 +2,7 @@
     var storageKey = "bauhausFloatingPlayerState";
     var resumeKey = "bauhausFloatingPlayerResumeRequested";
     var iconBase = "./assets/images/";
-    var tracks = [
+    var fallbackTracks = [
         { src: "./assets/audio/[Jean-Efflam Bavouzet] - Suite Bergamasque, L. 75, CD 82 III. Clair de Lune.mp3" },
         { src: "./assets/audio/[Jean-Efflam Bavouzet] - Suite Bergamasque, L. 75, CD 82 I. Prélude.mp3" },
         { src: "./assets/audio/[Jean-Efflam Bavouzet] - Suite Bergamasque, L. 75, CD 82 II. Menuet.mp3" },
@@ -15,7 +15,8 @@
         { src: "./assets/audio/[Jean-Efflam Bavouzet] - Children's Corner, L. 113, CD 119 IV. The Snow is Dancing.mp3" },
         { src: "./assets/audio/[Jean-Efflam Bavouzet] - Children's Corner, L. 113, CD 119 V. The Little Shepherd.mp3" },
         { src: "./assets/audio/[Jean-Efflam Bavouzet] - Children's Corner, L. 113, CD 119 VI. Golliwogg's Cakewalk.mp3" }
-    ].map(function(track) {
+    ];
+    var tracks = (Array.isArray(window.bauhausAudioTracks) && window.bauhausAudioTracks.length ? window.bauhausAudioTracks : fallbackTracks).map(function(track) {
         return Object.assign(track, parseTrackName(track.src));
     });
 
@@ -90,11 +91,7 @@
     }
 
     function trackUrl(src) {
-        var encoded = src.split("/").map(function(part) {
-            if (part === "." || part === ".." || part === "") return part;
-            return encodeURIComponent(part);
-        }).join("/");
-        return new URL(encoded, window.location.href).href;
+        return new URL(src, window.location.href).href;
     }
 
     function initPlayer() {
@@ -116,8 +113,9 @@
         var trackList = document.getElementById("bauhaus-track-list");
         var time = document.getElementById("bauhaus-time");
         var stored = readState();
-        var current = hasResumeRequest() && Number.isInteger(stored.current) ? stored.current : 0;
-        var pendingTime = Number(stored.currentTime) || 0;
+        var shouldResumeTrack = hasResumeRequest() && Number.isInteger(stored.current);
+        var current = shouldResumeTrack ? stored.current : Math.floor(Math.random() * tracks.length);
+        var pendingTime = shouldResumeTrack ? Number(stored.currentTime) || 0 : 0;
         var wantsPlaying = true;
         var dragging = false;
         var dragOffsetX = 0;
@@ -129,13 +127,19 @@
 
         current = ((current % tracks.length) + tracks.length) % tracks.length;
 
+        function restorablePositionValue(value, fallback) {
+            if (Number.isFinite(parseFloat(value))) return value;
+            if (Number.isFinite(parseFloat(fallback))) return fallback;
+            return "";
+        }
+
         function saveState(extra) {
             writeState(Object.assign({
                 current: current,
                 currentTime: audio.currentTime || pendingTime || 0,
                 playing: wantsPlaying,
-                left: player.style.left || stored.left || "",
-                top: player.style.top || stored.top || "",
+                left: restorablePositionValue(player.style.left, stored.left),
+                top: restorablePositionValue(player.style.top, stored.top),
                 expanded: isExpanded
             }, extra || {}));
         }
@@ -168,22 +172,26 @@
             return openUp;
         }
 
-        function pinPlayerForList(openUp, beforeRect) {
-            var afterRect = player.getBoundingClientRect();
-            var left = beforeRect.left;
-            var top = openUp ? beforeRect.bottom - afterRect.height : beforeRect.top;
+        function placePlayer(left, top) {
             var position = clampPlayer(left, top);
-            player.style.left = position.left + "px";
-            player.style.top = position.top + "px";
-            player.style.right = "auto";
-            player.style.bottom = "auto";
-            saveState();
+            player.style.setProperty("left", position.left + "px", "important");
+            player.style.setProperty("top", position.top + "px", "important");
+            player.style.setProperty("right", "auto", "important");
+            player.style.setProperty("bottom", "auto", "important");
+            return position;
         }
 
-        function closeTrackList() {
-            trackList.hidden = true;
-            player.classList.remove("is-list-open");
-            listToggle.setAttribute("aria-expanded", "false");
+        function anchorPlayerForList(openUp, beforeRect) {
+            var left = Math.max(8, Math.min(beforeRect.left, window.innerWidth - beforeRect.width - 8));
+            player.style.setProperty("left", left + "px", "important");
+            player.style.setProperty("right", "auto", "important");
+            if (openUp) {
+                player.style.setProperty("top", "auto", "important");
+                player.style.setProperty("bottom", Math.max(8, window.innerHeight - beforeRect.bottom) + "px", "important");
+            } else {
+                player.style.setProperty("top", Math.max(8, beforeRect.top) + "px", "important");
+                player.style.setProperty("bottom", "auto", "important");
+            }
         }
 
         function requestResume() {
@@ -329,7 +337,8 @@
                 button.appendChild(itemAuthor);
                 button.addEventListener("click", function() {
                     loadTrack(index, true, 0);
-                    closeTrackList();
+                    trackList.hidden = true;
+                    listToggle.setAttribute("aria-expanded", "false");
                 });
                 trackList.appendChild(button);
             });
@@ -422,11 +431,11 @@
 
         function restorePosition() {
             if (stored.left && stored.top) {
-                var position = clampPlayer(parseFloat(stored.left), parseFloat(stored.top));
-                player.style.left = position.left + "px";
-                player.style.top = position.top + "px";
-                player.style.right = "auto";
-                player.style.bottom = "auto";
+                var storedLeft = parseFloat(stored.left);
+                var storedTop = parseFloat(stored.top);
+                if (Number.isFinite(storedLeft) && Number.isFinite(storedTop)) {
+                    placePlayer(storedLeft, storedTop);
+                }
             }
         }
 
@@ -516,9 +525,12 @@
                 trackList.hidden = false;
                 player.classList.add("is-list-open");
                 listToggle.setAttribute("aria-expanded", "true");
-                pinPlayerForList(openUp, beforeRect);
+                anchorPlayerForList(openUp, beforeRect);
             } else {
-                closeTrackList();
+                trackList.hidden = true;
+                player.classList.remove("is-list-open");
+                listToggle.setAttribute("aria-expanded", "false");
+                updateListDirection();
             }
         });
 
@@ -538,11 +550,7 @@
 
         player.addEventListener("pointermove", function(event) {
             if (!dragging) return;
-            var position = clampPlayer(event.clientX - dragOffsetX, event.clientY - dragOffsetY);
-            player.style.left = position.left + "px";
-            player.style.top = position.top + "px";
-            player.style.right = "auto";
-            player.style.bottom = "auto";
+            placePlayer(event.clientX - dragOffsetX, event.clientY - dragOffsetY);
             updateListDirection();
         });
 
@@ -554,9 +562,7 @@
 
         window.addEventListener("resize", function() {
             if (player.style.left && player.style.top) {
-                var position = clampPlayer(parseFloat(player.style.left), parseFloat(player.style.top));
-                player.style.left = position.left + "px";
-                player.style.top = position.top + "px";
+                placePlayer(parseFloat(player.style.left), parseFloat(player.style.top));
                 updateListDirection();
                 saveState();
             }

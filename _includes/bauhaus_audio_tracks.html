@@ -1,0 +1,14 @@
+<script>
+window.bauhausAudioTracks = [
+{%- assign audio_files = site.static_files | where_exp: "file", "file.path contains '/assets/audio/'" | sort: "path" -%}
+{%- assign first_audio = true -%}
+{%- for file in audio_files -%}
+    {%- assign ext = file.extname | downcase -%}
+    {%- if ext == ".mp3" -%}
+        {%- unless first_audio -%},{%- endunless -%}
+        { "src": {{ file.path | relative_url | jsonify }} }
+        {%- assign first_audio = false -%}
+    {%- endif -%}
+{%- endfor -%}
+];
+</script>

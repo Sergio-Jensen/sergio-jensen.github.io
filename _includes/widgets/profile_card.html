@@ -19,7 +19,7 @@
 
                         <div class="d-flex">
                             <div class="h1 font-weight-normal">
-                                <span class="smallcaps">{% if site.data.profile.primary_name_html %}{{ site.data.profile.primary_name_html }}{% else %}{{ site.data.profile.primary_name }}{% endif %}</span> <span class="ssmallcaps">{{ site.data.profile.secondary_name }}</span>
+                                <span class="smallcaps profile-primary-name">{% if site.data.profile.primary_name_html %}{{ site.data.profile.primary_name_html }}{% else %}{{ site.data.profile.primary_name }}{% endif %}</span> <span class="ssmallcaps">{{ site.data.profile.secondary_name }}</span>
                             </div>
                             {% if site.data.profile.portrait_url %}
                             <div class="ml-auto d-md-none">
@@ -50,7 +50,7 @@
                 <div class="row">
                     <div class="col">
                         <a class="pr-3 no-break" href="mailto:{{ site.data.profile.email | encode_email }}">
-                            <i class="fas fa-at"></i> <span class="email-text">{{ site.data.profile.email | replace: "@", "(at)" }}</span>
+                            <i class="fas fa-at" style="font-size: 18pt;"></i> <span class="email-text">{{ site.data.profile.email | replace: "@", "(at)" }}</span>
                         </a>
 
                         {% if site.data.profile.gscholar %}
@@ -60,49 +60,49 @@
                         {%- assign gscholar_url = 'https://scholar.google.com/citations?user=' | append: site.data.profile.gscholar -%}
                         {%- endif -%}
                         <a class="pr-3 no-break" target="_blank" href="{{ gscholar_url }}">
-                            <i class="fab fa-google-scholar"></i> Google Scholar
+                            <i class="fab fa-google-scholar" style="font-size: 18pt;"></i> Google Scholar
                         </a>
                         {% endif %}
 
                         {% if site.data.profile.orcid %}
                         <a class="pr-3 no-break" target="_blank" href="https://orcid.org/{{ site.data.profile.orcid }}">
-                            <i class="fab fa-orcid"></i> ORCID
+                            <i class="fab fa-orcid" style="font-size: 18pt;"></i> ORCID
                         </a>
                         {% endif %}
 
                         {% if site.data.profile.wos %}
                         <a class="pr-3 no-break" target="_blank" href="https://webofscience.clarivate.cn/wos/author/record/{{ site.data.profile.wos }}">
-                            <i class="ai ai-clarivate"></i> Clarivate
+                            <i class="ai ai-clarivate" style="font-size: 18pt;"></i> Clarivate
                         </a>
                         {% endif %}
 
                         {% if site.data.profile.scopus %}
                         <a class="pr-3 no-break" target="_blank" href="https://www.scopus.com/authid/detail.uri?authorId={{ site.data.profile.scopus }}">
-                            <i class="ai ai-scopus"></i> Scopus
+                            <i class="ai ai-scopus" style="font-size: 18pt;"></i> Scopus
                         </a>
                         {% endif %}
 
                         {% if site.data.profile.researchgate %}
                         <a class="pr-3 no-break" target="_blank" href="https://www.researchgate.net/profile/{{ site.data.profile.researchgate }}">
-                            <i class="fab fa-researchgate"></i> ResearchGate
+                            <i class="fab fa-researchgate" style="font-size: 18pt;"></i> ResearchGate
                         </a>
                         {% endif %}
                         
                         {% if site.data.profile.github %}
                         <a class="pr-3 no-break" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
-                            <i class="fab fa-github"></i> GitHub
+                            <i class="fab fa-github" style="font-size: 18pt;"></i> GitHub
                         </a>
                         {% endif %}
 
                         {% if site.data.profile.twitter %}
                         <a class="pr-3 no-break" target="_blank" href="https://twitter.com/{{ site.data.profile.twitter }}">
-                            <i class="fab fa-twitter"></i> Twitter
+                            <i class="fab fa-twitter" style="font-size: 18pt;"></i> Twitter
                         </a>
                         {% endif %}
 
                         {% if site.data.profile.linkedin %}
                         <a class="pr-3 no-break" target="_blank" href="https://www.linkedin.com/in/{{ site.data.profile.linkedin }}">
-                            <i class="fab fa-linkedin"></i> LinkedIn
+                            <i class="fab fa-linkedin" style="font-size: 18pt;"></i> LinkedIn
                         </a>
                         {% endif %}
 
