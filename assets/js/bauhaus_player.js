@@ -162,8 +162,28 @@
             var rect = player.getBoundingClientRect();
             var spaceBelow = window.innerHeight - rect.bottom;
             var spaceAbove = rect.top;
-            var openUp = spaceBelow < 260 && spaceAbove > spaceBelow;
+            var expectedListHeight = Math.min(320, window.innerHeight * 0.44);
+            var openUp = spaceBelow < expectedListHeight && spaceAbove > spaceBelow;
             player.classList.toggle("list-opens-up", openUp);
+            return openUp;
+        }
+
+        function pinPlayerForList(openUp, beforeRect) {
+            var afterRect = player.getBoundingClientRect();
+            var left = beforeRect.left;
+            var top = openUp ? beforeRect.bottom - afterRect.height : beforeRect.top;
+            var position = clampPlayer(left, top);
+            player.style.left = position.left + "px";
+            player.style.top = position.top + "px";
+            player.style.right = "auto";
+            player.style.bottom = "auto";
+            saveState();
+        }
+
+        function closeTrackList() {
+            trackList.hidden = true;
+            player.classList.remove("is-list-open");
+            listToggle.setAttribute("aria-expanded", "false");
         }
 
         function requestResume() {
@@ -309,8 +329,7 @@
                 button.appendChild(itemAuthor);
                 button.addEventListener("click", function() {
                     loadTrack(index, true, 0);
-                    trackList.hidden = true;
-                    listToggle.setAttribute("aria-expanded", "false");
+                    closeTrackList();
                 });
                 trackList.appendChild(button);
             });
@@ -490,10 +509,17 @@
         });
 
         listToggle.addEventListener("click", function() {
-            trackList.hidden = !trackList.hidden;
-            player.classList.toggle("is-list-open", !trackList.hidden);
-            updateListDirection();
-            listToggle.setAttribute("aria-expanded", String(!trackList.hidden));
+            var willOpen = trackList.hidden;
+            var beforeRect = player.getBoundingClientRect();
+            if (willOpen) {
+                var openUp = updateListDirection();
+                trackList.hidden = false;
+                player.classList.add("is-list-open");
+                listToggle.setAttribute("aria-expanded", "true");
+                pinPlayerForList(openUp, beforeRect);
+            } else {
+                closeTrackList();
+            }
         });
 
         toggle.addEventListener("click", function(event) {
