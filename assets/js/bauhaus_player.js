@@ -1,6 +1,7 @@
 (function() {
     var storageKey = "bauhausFloatingPlayerState";
     var resumeKey = "bauhausFloatingPlayerResumeRequested";
+    var iconBase = "./assets/images/";
     var tracks = [
         { src: "./assets/audio/[Jean-Efflam Bavouzet] - Suite Bergamasque, L. 75, CD 82 III. Clair de Lune.mp3" },
         { src: "./assets/audio/[Jean-Efflam Bavouzet] - Suite Bergamasque, L. 75, CD 82 I. Prélude.mp3" },
@@ -41,10 +42,10 @@
         player.setAttribute("aria-label", "Floating music player");
         player.innerHTML = [
             '<div class="bauhaus-player-strip" aria-hidden="true"></div>',
-            '<div class="bauhaus-player-drag" id="bauhaus-player-drag">',
-                '<span class="bauhaus-player-dot"></span>',
-                '<span>PLAYER</span>',
-            '</div>',
+            '<button type="button" class="bauhaus-player-toggle" id="bauhaus-player-toggle" aria-expanded="true" aria-label="Toggle player">',
+                '<span class="bauhaus-toggle-track"><span class="bauhaus-toggle-thumb"></span></span>',
+                '<span class="bauhaus-toggle-label">PLAYER</span>',
+            '</button>',
             '<div class="bauhaus-player-title-row">',
                 '<div class="bauhaus-track-copy">',
                     '<span class="bauhaus-track-title" id="bauhaus-track-title">Loading</span>',
@@ -54,9 +55,9 @@
             '</div>',
             '<div class="bauhaus-track-list" id="bauhaus-track-list" hidden></div>',
             '<div class="bauhaus-player-controls">',
-                '<button type="button" class="bauhaus-player-button square" id="bauhaus-prev" aria-label="Previous track">&#9664;&#9664;</button>',
-                '<button type="button" class="bauhaus-player-button play" id="bauhaus-play" aria-label="Play or pause">&#9654;</button>',
-                '<button type="button" class="bauhaus-player-button square" id="bauhaus-next" aria-label="Next track">&#9654;&#9654;</button>',
+                '<button type="button" class="bauhaus-player-button square" id="bauhaus-prev" aria-label="Previous track"><img src="' + iconBase + 'left.png" alt=""></button>',
+                '<button type="button" class="bauhaus-player-button play" id="bauhaus-play" aria-label="Play or pause" data-play-icon="' + iconBase + 'play.png" data-stop-icon="' + iconBase + 'stop.png"><img src="' + iconBase + 'play.png" alt=""></button>',
+                '<button type="button" class="bauhaus-player-button square" id="bauhaus-next" aria-label="Next track"><img src="' + iconBase + 'right.png" alt=""></button>',
                 '<div class="bauhaus-progress-wrap">',
                     '<input type="range" id="bauhaus-progress" min="0" max="100" value="0" aria-label="Track progress">',
                     '<div class="bauhaus-player-time" id="bauhaus-time">0:00</div>',
@@ -103,7 +104,7 @@
         createPlayerMarkup();
 
         var player = document.getElementById("bauhaus-player");
-        var handle = document.getElementById("bauhaus-player-drag");
+        var toggle = document.getElementById("bauhaus-player-toggle");
         var audio = document.getElementById("homepage-audio");
         var play = document.getElementById("bauhaus-play");
         var prev = document.getElementById("bauhaus-prev");
@@ -124,6 +125,7 @@
         var pageLeaving = false;
         var loadErrorCount = 0;
         var firstAutoplayAttempt = true;
+        var isExpanded = stored.expanded !== false;
 
         current = ((current % tracks.length) + tracks.length) % tracks.length;
 
@@ -133,8 +135,35 @@
                 currentTime: audio.currentTime || pendingTime || 0,
                 playing: wantsPlaying,
                 left: player.style.left || stored.left || "",
-                top: player.style.top || stored.top || ""
+                top: player.style.top || stored.top || "",
+                expanded: isExpanded
             }, extra || {}));
+        }
+
+        function setPlayIcon(isPlaying) {
+            var image = play.querySelector("img");
+            if (!image) return;
+            image.src = isPlaying ? play.dataset.stopIcon : play.dataset.playIcon;
+        }
+
+        function isInteractiveTarget(target) {
+            return Boolean(target.closest("button, input, a, audio, .bauhaus-progress-wrap, .bauhaus-track-list"));
+        }
+
+        function setExpanded(nextExpanded) {
+            isExpanded = nextExpanded;
+            player.classList.toggle("is-collapsed", !isExpanded);
+            toggle.setAttribute("aria-expanded", String(isExpanded));
+            saveState({ expanded: isExpanded });
+            updateListDirection();
+        }
+
+        function updateListDirection() {
+            var rect = player.getBoundingClientRect();
+            var spaceBelow = window.innerHeight - rect.bottom;
+            var spaceAbove = rect.top;
+            var openUp = spaceBelow < 260 && spaceAbove > spaceBelow;
+            player.classList.toggle("list-opens-up", openUp);
         }
 
         function requestResume() {
@@ -311,7 +340,7 @@
             }
             title.textContent = tracks[current].title;
             author.textContent = tracks[current].author;
-            play.textContent = "\u25b6";
+            setPlayIcon(false);
             renderTrackList();
             updateProgress();
             saveState({ current: current, currentTime: pendingTime, playing: shouldPlay });
@@ -395,13 +424,13 @@
 
         audio.addEventListener("play", function() {
             wantsPlaying = true;
-            play.textContent = "\u275a\u275a";
+            setPlayIcon(true);
             clearResumeRequest();
             saveState({ playing: true });
         });
 
         audio.addEventListener("pause", function() {
-            play.textContent = "\u25b6";
+            setPlayIcon(false);
             if (!pageLeaving) {
                 saveState({ playing: wantsPlaying });
             }
@@ -463,29 +492,37 @@
         listToggle.addEventListener("click", function() {
             trackList.hidden = !trackList.hidden;
             player.classList.toggle("is-list-open", !trackList.hidden);
+            updateListDirection();
             listToggle.setAttribute("aria-expanded", String(!trackList.hidden));
         });
 
-        handle.addEventListener("pointerdown", function(event) {
+        toggle.addEventListener("click", function(event) {
+            event.stopPropagation();
+            setExpanded(!isExpanded);
+        });
+
+        player.addEventListener("pointerdown", function(event) {
+            if (isInteractiveTarget(event.target)) return;
             dragging = true;
             var rect = player.getBoundingClientRect();
             dragOffsetX = event.clientX - rect.left;
             dragOffsetY = event.clientY - rect.top;
-            handle.setPointerCapture(event.pointerId);
+            player.setPointerCapture(event.pointerId);
         });
 
-        handle.addEventListener("pointermove", function(event) {
+        player.addEventListener("pointermove", function(event) {
             if (!dragging) return;
             var position = clampPlayer(event.clientX - dragOffsetX, event.clientY - dragOffsetY);
             player.style.left = position.left + "px";
             player.style.top = position.top + "px";
             player.style.right = "auto";
             player.style.bottom = "auto";
+            updateListDirection();
         });
 
-        handle.addEventListener("pointerup", function(event) {
+        player.addEventListener("pointerup", function(event) {
             dragging = false;
-            handle.releasePointerCapture(event.pointerId);
+            player.releasePointerCapture(event.pointerId);
             saveState();
         });
 
@@ -494,6 +531,7 @@
                 var position = clampPlayer(parseFloat(player.style.left), parseFloat(player.style.top));
                 player.style.left = position.left + "px";
                 player.style.top = position.top + "px";
+                updateListDirection();
                 saveState();
             }
         });
@@ -532,6 +570,9 @@
 
         restorePosition();
         player.classList.toggle("is-list-open", !trackList.hidden);
+        setExpanded(isExpanded);
+        setPlayIcon(!audio.paused);
+        updateListDirection();
         if (hasResumeRequest()) {
             wantsPlaying = true;
         }
