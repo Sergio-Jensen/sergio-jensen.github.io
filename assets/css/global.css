@@ -2232,6 +2232,8 @@ a.text-body.publication-author-link:hover {
         font-size: 0.68rem !important;
         line-height: 1.05 !important;
         margin-top: 0.3rem !important;
+        padding-top: 0.1rem;
+        padding-bottom: 0.1rem;
     }
 
     #bauhaus-player .bauhaus-track-list {
