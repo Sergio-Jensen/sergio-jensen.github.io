@@ -750,7 +750,6 @@ body::after {
     background:
         linear-gradient(var(--bauhaus-ink), var(--bauhaus-ink)) 12vw 12.5rem / 76px 7px no-repeat,
         linear-gradient(var(--bauhaus-ink), var(--bauhaus-ink)) calc(100% - 15vw) 17.2rem / 7px 78px no-repeat,
-        radial-gradient(circle, transparent 0 17px, var(--bauhaus-ink) 18px 22px, transparent 23px) 8vw 42vh / 48px 48px no-repeat,
         radial-gradient(circle, var(--bauhaus-red) 0 15px, transparent 16px) calc(100% - 9vw) 44vh / 42px 42px no-repeat,
         linear-gradient(var(--bauhaus-yellow), var(--bauhaus-yellow)) 11vw calc(100% - 9rem) / 48px 48px no-repeat,
         linear-gradient(var(--bauhaus-blue), var(--bauhaus-blue)) calc(100% - 12vw) calc(100% - 8.5rem) / 54px 54px no-repeat,
@@ -1590,7 +1589,6 @@ h2[id="year-"] + .my-0 .row.no-gutters.border-gray::before {
         opacity: 0.72;
         background:
             linear-gradient(var(--bauhaus-ink), var(--bauhaus-ink)) 1rem 8.3rem / 46px 6px no-repeat,
-            radial-gradient(circle, transparent 0 12px, var(--bauhaus-ink) 13px 16px, transparent 17px) calc(100% - 3.3rem) 11rem / 36px 36px no-repeat,
             radial-gradient(circle, var(--bauhaus-red) 0 10px, transparent 11px) 1.15rem 48vh / 28px 28px no-repeat,
             linear-gradient(var(--bauhaus-yellow), var(--bauhaus-yellow)) calc(100% - 3.2rem) 57vh / 32px 32px no-repeat,
             linear-gradient(var(--bauhaus-blue), var(--bauhaus-blue)) 1.3rem calc(100% - 8rem) / 34px 34px no-repeat,
@@ -2337,8 +2335,263 @@ a.text-body.publication-author-link:hover {
     font-size: 100%;
 }
 
+.bauhaus-splash {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    background:
+        linear-gradient(90deg, transparent 0 5%, rgba(0, 0, 0, 0.09) 5% 5.35%, transparent 5.35% 94.65%, rgba(0, 0, 0, 0.09) 94.65% 95%, transparent 95%),
+        var(--bauhaus-paper);
+    color: var(--bauhaus-ink);
+    opacity: 1;
+    transition: opacity 0.42s ease 0.92s, visibility 0.42s ease 0.92s;
+}
+
+.bauhaus-splash-seen .bauhaus-splash,
+.bauhaus-splash[hidden] {
+    display: none;
+}
+
+body.bauhaus-splash-active {
+    overflow: hidden;
+}
+
+.bauhaus-splash-mark {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    justify-items: center;
+    gap: 1.25rem;
+    padding: 2rem;
+    transform: translateY(0) scale(1);
+    animation: bauhausSplashMarkIn 0.76s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.bauhaus-splash-portrait {
+    width: min(28vw, 220px);
+    min-width: 150px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 6px solid var(--bauhaus-ink);
+    border-radius: 0;
+    background: var(--bauhaus-white);
+    box-shadow: 10px 10px 0 var(--bauhaus-ink);
+}
+
+.bauhaus-splash-name {
+    max-width: min(84vw, 920px);
+    font-family: "Courier New", Courier, monospace;
+    font-size: clamp(2rem, 5vw, 4.75rem);
+    font-weight: 900;
+    line-height: 1.02;
+    text-align: center;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+.bauhaus-splash-shape,
+.bauhaus-splash-line {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    border: 6px solid var(--bauhaus-ink);
+    box-shadow: 8px 8px 0 var(--bauhaus-ink);
+    animation: bauhausSplashShapeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.bauhaus-splash-shape-red {
+    top: 11vh;
+    left: 9vw;
+    width: 72px;
+    height: 72px;
+    background: var(--bauhaus-red);
+    animation-delay: 0.08s;
+}
+
+.bauhaus-splash-shape-yellow {
+    right: 12vw;
+    top: 16vh;
+    width: 106px;
+    height: 106px;
+    border-radius: 50%;
+    background: var(--bauhaus-yellow);
+    animation-delay: 0.14s;
+}
+
+.bauhaus-splash-shape-blue {
+    left: 14vw;
+    bottom: 13vh;
+    width: 0;
+    height: 0;
+    border-left: 58px solid transparent;
+    border-right: 58px solid transparent;
+    border-bottom: 104px solid var(--bauhaus-blue);
+    border-top: 0;
+    box-shadow: 8px 8px 0 var(--bauhaus-ink);
+    background: transparent;
+    animation-delay: 0.2s;
+}
+
+.bauhaus-splash-line {
+    height: 8px;
+    border: 0;
+    background: var(--bauhaus-ink);
+    box-shadow: none;
+}
+
+.bauhaus-splash-line-top {
+    top: 8vh;
+    right: 22vw;
+    width: 24vw;
+}
+
+.bauhaus-splash-line-bottom {
+    bottom: 9vh;
+    right: 10vw;
+    width: 36vw;
+}
+
+.bauhaus-splash.is-leaving {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.bauhaus-splash.is-leaving .bauhaus-splash-mark {
+    animation: bauhausSplashMarkOut 1.18s cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+.bauhaus-splash.is-leaving .bauhaus-splash-shape-red {
+    animation: bauhausSplashExitLeft 1.26s cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+.bauhaus-splash.is-leaving .bauhaus-splash-shape-yellow {
+    animation: bauhausSplashExitRight 1.26s cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+.bauhaus-splash.is-leaving .bauhaus-splash-shape-blue,
+.bauhaus-splash.is-leaving .bauhaus-splash-line {
+    animation: bauhausSplashExitDown 1.26s cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+@keyframes bauhausSplashMarkIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes bauhausSplashShapeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-16px) rotate(-8deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+    }
+}
+
+@keyframes bauhausSplashMarkOut {
+    to {
+        opacity: 0;
+        transform: translateY(-18px) scale(1.04);
+    }
+}
+
+@keyframes bauhausSplashExitLeft {
+    to {
+        opacity: 0;
+        transform: translateX(-22vw) rotate(-14deg);
+    }
+}
+
+@keyframes bauhausSplashExitRight {
+    to {
+        opacity: 0;
+        transform: translateX(22vw) rotate(14deg);
+    }
+}
+
+@keyframes bauhausSplashExitDown {
+    to {
+        opacity: 0;
+        transform: translateY(22vh);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bauhaus-splash-mark,
+    .bauhaus-splash-shape,
+    .bauhaus-splash-line,
+    .bauhaus-splash.is-leaving .bauhaus-splash-mark,
+    .bauhaus-splash.is-leaving .bauhaus-splash-shape,
+    .bauhaus-splash.is-leaving .bauhaus-splash-line {
+        animation: none;
+    }
+
+    .bauhaus-splash {
+        transition: opacity 0.12s ease, visibility 0.12s ease;
+    }
+}
+
 /* Mobile-only player usability fixes. */
 @media (max-width: 767.98px) {
+    .bauhaus-splash-mark {
+        gap: 1rem;
+        padding: 1.25rem;
+    }
+
+    .bauhaus-splash-portrait {
+        width: min(48vw, 180px);
+        min-width: 128px;
+        border-width: 5px;
+        box-shadow: 7px 7px 0 var(--bauhaus-ink);
+    }
+
+    .bauhaus-splash-name {
+        max-width: 88vw;
+        font-size: clamp(1.65rem, 9vw, 3.25rem);
+    }
+
+    .bauhaus-splash-shape-red {
+        top: 9vh;
+        left: 8vw;
+        width: 44px;
+        height: 44px;
+    }
+
+    .bauhaus-splash-shape-yellow {
+        right: 8vw;
+        top: 13vh;
+        width: 58px;
+        height: 58px;
+    }
+
+    .bauhaus-splash-shape-blue {
+        left: 10vw;
+        bottom: 10vh;
+        border-left-width: 36px;
+        border-right-width: 36px;
+        border-bottom-width: 64px;
+    }
+
+    .bauhaus-splash-line-top {
+        width: 34vw;
+        right: 14vw;
+    }
+
+    .bauhaus-splash-line-bottom {
+        width: 46vw;
+    }
+
     #bauhaus-player.bauhaus-floating-player {
         touch-action: none !important;
     }

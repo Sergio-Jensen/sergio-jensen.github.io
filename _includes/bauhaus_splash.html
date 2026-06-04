@@ -1,0 +1,15 @@
+<div class="bauhaus-splash" id="bauhaus-splash" role="button" tabindex="0" aria-label="Enter site">
+    <div class="bauhaus-splash-shape bauhaus-splash-shape-red" aria-hidden="true"></div>
+    <div class="bauhaus-splash-shape bauhaus-splash-shape-yellow" aria-hidden="true"></div>
+    <div class="bauhaus-splash-shape bauhaus-splash-shape-blue" aria-hidden="true"></div>
+    <div class="bauhaus-splash-line bauhaus-splash-line-top" aria-hidden="true"></div>
+    <div class="bauhaus-splash-line bauhaus-splash-line-bottom" aria-hidden="true"></div>
+    <div class="bauhaus-splash-mark">
+        {% if site.data.profile.portrait_url %}
+        <img class="bauhaus-splash-portrait" src="{{ site.data.profile.portrait_url | relative_url }}" alt="{{ site.data.profile.primary_name }}">
+        {% endif %}
+        <div class="bauhaus-splash-name">
+            {% if site.data.profile.primary_name_html %}{{ site.data.profile.primary_name_html }}{% else %}{{ site.data.profile.primary_name }}{% endif %}
+        </div>
+    </div>
+</div>
