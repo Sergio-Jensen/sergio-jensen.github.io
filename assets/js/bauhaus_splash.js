@@ -1,21 +1,6 @@
 (function() {
-    var storageKey = "bauhausSplashEntered";
     var splash = document.getElementById("bauhaus-splash");
     if (!splash) return;
-
-    function hasEntered() {
-        try {
-            return sessionStorage.getItem(storageKey) === "1";
-        } catch (error) {
-            return false;
-        }
-    }
-
-    function rememberEntered() {
-        try {
-            sessionStorage.setItem(storageKey, "1");
-        } catch (error) {}
-    }
 
     function removeSplash() {
         splash.hidden = true;
@@ -25,15 +10,9 @@
 
     function enterSite() {
         if (splash.classList.contains("is-leaving")) return;
-        rememberEntered();
         splash.classList.add("is-leaving");
         window.dispatchEvent(new CustomEvent("bauhausSplashEntered"));
         window.setTimeout(removeSplash, 1450);
-    }
-
-    if (hasEntered()) {
-        removeSplash();
-        return;
     }
 
     document.body.classList.add("bauhaus-splash-active");
