@@ -2,6 +2,17 @@
     var storageKey = "bauhausFloatingPlayerState";
     var resumeKey = "bauhausFloatingPlayerResumeRequested";
     var iconBase = "./assets/images/";
+    var noteBase = "./assets/images/decorations/";
+    var noteSprites = [
+        "bauhaus-note-01.png",
+        "bauhaus-note-02.png",
+        "bauhaus-note-03.png",
+        "bauhaus-note-04.png",
+        "bauhaus-note-05.png",
+        "bauhaus-note-06.png",
+        "bauhaus-note-07.png",
+        "bauhaus-note-08.png"
+    ];
     var fallbackTracks = [
         { src: "./assets/audio/[Jean-Efflam Bavouzet] - Suite Bergamasque, L. 75, CD 82 III. Clair de Lune.mp3" },
         { src: "./assets/audio/[Jean-Efflam Bavouzet] - Suite Bergamasque, L. 75, CD 82 I. Prélude.mp3" },
@@ -25,7 +36,7 @@
         var match = file.match(/^\[([^\]]+)\]\s*-\s*(.+)$/);
         if (match) {
             return {
-                author: match[1].trim(),
+                author: match[1].trim().replace(/\s*[:/]\s*/g, " / "),
                 title: match[2].trim()
             };
         }
@@ -124,6 +135,7 @@
         var loadErrorCount = 0;
         var firstAutoplayAttempt = true;
         var isExpanded = stored.expanded !== false;
+        var lastNoteAt = 0;
 
         current = ((current % tracks.length) + tracks.length) % tracks.length;
 
@@ -342,6 +354,10 @@
                 });
                 trackList.appendChild(button);
             });
+            var credit = document.createElement("div");
+            credit.className = "bauhaus-track-list-credit";
+            credit.textContent = "From Sisyphus?";
+            trackList.appendChild(credit);
         }
 
         function updateProgress() {
@@ -355,6 +371,41 @@
             progress.value = String(percent);
             progress.style.setProperty("--progress", percent + "%");
             time.textContent = formatTime(audio.duration - audio.currentTime);
+        }
+
+        function emitFloatingNote() {
+            if (audio.paused || !audio.duration || document.hidden) return;
+            var now = Date.now();
+            if (now - lastNoteAt < 1350) return;
+            lastNoteAt = now;
+
+            var rect = progress.getBoundingClientRect();
+            var percent = Math.max(0, Math.min(1, Number(progress.value) / 100 || 0));
+            var note = document.createElement("img");
+            var sprite = noteSprites[Math.floor(Math.random() * noteSprites.length)];
+            var size = Math.round(30 + Math.random() * 20);
+            var startX = rect.left + rect.width * percent;
+            var startY = rect.top + rect.height / 2 - 10;
+            var driftX = Math.round((Math.random() - 0.5) * 92);
+            var driftY = Math.round(74 + Math.random() * 58);
+            var rotateStart = Math.round(Math.random() * 90 - 45);
+            var rotateEnd = rotateStart + Math.round(Math.random() * 110 - 55);
+
+            note.className = "bauhaus-floating-note";
+            note.src = noteBase + sprite;
+            note.alt = "";
+            note.setAttribute("aria-hidden", "true");
+            note.style.left = startX + "px";
+            note.style.top = startY + "px";
+            note.style.width = size + "px";
+            note.style.setProperty("--note-x", driftX + "px");
+            note.style.setProperty("--note-y", "-" + driftY + "px");
+            note.style.setProperty("--note-rotate-start", rotateStart + "deg");
+            note.style.setProperty("--note-rotate-end", rotateEnd + "deg");
+            document.body.appendChild(note);
+            window.setTimeout(function() {
+                note.remove();
+            }, 1800);
         }
 
         function loadTrack(index, shouldPlay, startTime) {
@@ -484,6 +535,7 @@
 
         audio.addEventListener("timeupdate", function() {
             updateProgress();
+            emitFloatingNote();
             saveState();
         });
 

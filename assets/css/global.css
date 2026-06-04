@@ -1500,6 +1500,15 @@ h2[id="year-"] + .my-0 .row.no-gutters.border-gray::before {
     color: var(--bauhaus-white);
 }
 
+.bauhaus-track-list-credit {
+    padding: 0.2rem 0.35rem 0;
+    color: var(--bauhaus-muted);
+    font-family: Courier, "Courier New", monospace;
+    font-size: 0.72rem;
+    font-weight: 900;
+    text-align: right;
+}
+
 .bauhaus-player-controls {
     display: grid;
     grid-template-columns: 3rem 4rem 3rem minmax(8rem, 1fr);
@@ -1572,6 +1581,32 @@ h2[id="year-"] + .my-0 .row.no-gutters.border-gray::before {
 
 .bauhaus-floating-player audio {
     display: none;
+}
+
+.bauhaus-floating-note {
+    position: fixed;
+    z-index: 1115;
+    width: 2.4rem;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    transform: translate(-50%, -100%) rotate(var(--note-rotate-start, 0deg)) scale(0.68);
+    transform-origin: 50% 85%;
+    animation: bauhausNoteFloat 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes bauhausNoteFloat {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -70%) rotate(var(--note-rotate-start, 0deg)) scale(0.52);
+    }
+    16% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(calc(-50% + var(--note-x, 0px)), calc(-100% + var(--note-y, -96px))) rotate(var(--note-rotate-end, 24deg)) scale(1);
+    }
 }
 
 @media (max-width: 767.98px) {
@@ -1892,6 +1927,8 @@ a.text-body.publication-author-link:hover {
     margin-top: 0.3rem !important;
     font-size: 0.78rem !important;
     margin-bottom: 0.5rem !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #bauhaus-player .bauhaus-list-toggle {
@@ -1971,6 +2008,7 @@ a.text-body.publication-author-link:hover {
     overflow: hidden !important;
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
+    font-size: 80%;
 }
 
 #bauhaus-player .bauhaus-track-list-item small {
