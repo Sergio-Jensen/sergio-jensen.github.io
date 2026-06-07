@@ -431,11 +431,11 @@ a[target="_blank"][href$=".pdf"]:hover,
     width: min(35rem, calc(100vw - 2rem)) !important;
     max-height: 10rem !important;
     padding: 0.75rem 0.95rem 0.85rem 1.7rem !important;
-    cursor: grab;
+    cursor: url("../images/decorations/cursor-grab.svg") 0 0, grab;
 }
 
 #bauhaus-player.bauhaus-floating-player:active {
-    cursor: grabbing;
+    cursor: url("../images/decorations/cursor-grabbing.svg?v=20260607-b8ba621") 0 0, grabbing;
 }
 
 #bauhaus-player .bauhaus-player-strip {
@@ -456,7 +456,7 @@ a[target="_blank"][href$=".pdf"]:hover,
     font-weight: 900;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    cursor: pointer;
+    cursor: url("../images/decorations/cursor-click.svg") 0 0, pointer;
 }
 
 #bauhaus-player .bauhaus-toggle-track {
@@ -509,6 +509,7 @@ a[target="_blank"][href$=".pdf"]:hover,
     border-width: 3px !important;
     box-shadow: 3px 3px 0 var(--bauhaus-ink) !important;
     font-size: 0.8rem !important;
+    cursor: url("../images/decorations/cursor-click.svg") 0 0, pointer;
 }
 
 #bauhaus-player .bauhaus-player-controls {
@@ -522,6 +523,7 @@ a[target="_blank"][href$=".pdf"]:hover,
     border-width: 4px !important;
     padding: 0.22rem !important;
     box-shadow: 3px 3px 0 var(--bauhaus-ink) !important;
+    cursor: url("../images/decorations/cursor-click.svg") 0 0, pointer;
 }
 
 #bauhaus-player .bauhaus-player-button.play {
@@ -555,15 +557,18 @@ a[target="_blank"][href$=".pdf"]:hover,
     max-height: min(18rem, 44vh) !important;
     margin: 0 !important;
     padding: 0 0.35rem 0 0 !important;
+    cursor: url("../images/decorations/cursor-click.svg") 0 0, pointer;
 }
 
 #bauhaus-player.list-opens-up .bauhaus-track-list {
     top: auto;
     bottom: calc(100% + 0.7rem);
+    cursor: url("../images/decorations/cursor-click.svg") 0 0, pointer;
 }
 
 #bauhaus-player .bauhaus-track-list-item {
     padding: 0.35rem 0.55rem !important;
+    cursor: url("../images/decorations/cursor-click.svg") 0 0, pointer;
 }
 
 #bauhaus-player .bauhaus-track-list-item span {
@@ -674,12 +679,14 @@ a[target="_blank"][href$=".pdf"]:hover,
     #bauhaus-player .bauhaus-list-toggle {
         height: 1.75rem !important;
         font-size: 0.68rem !important;
+    cursor: url("../images/decorations/cursor-click.svg") 0 0, pointer !important;
     }
 
     #bauhaus-player .bauhaus-track-list {
         left: 1.25rem;
         right: 0.65rem;
         max-height: min(16rem, 48vh) !important;
+    cursor: url("../images/decorations/cursor-click.svg") 0 0, pointer;
     }
 
     #bauhaus-player.is-collapsed {
@@ -1378,12 +1385,12 @@ h2[id="year-"] + .my-0 .row.no-gutters.border-gray::before {
     font-weight: 900;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    cursor: grab;
+    cursor: url("../images/decorations/cursor-grab.svg") 0 0, grab;
     touch-action: none;
 }
 
 .bauhaus-player-drag:active {
-    cursor: grabbing;
+    cursor: url("../images/decorations/cursor-grabbing.svg?v=20260607-b8ba621") 0 0, grabbing;
 }
 
 .bauhaus-player-dot {
@@ -1707,6 +1714,7 @@ h2[id="year-"] + .my-0 .row.no-gutters.border-gray::before {
     .bauhaus-list-toggle {
         height: 2.25rem;
         padding: 0 0.55rem;
+    cursor: url("../images/decorations/cursor-click.svg") 0 0, pointer !important;
     }
 
     .bauhaus-player-controls {
@@ -1857,7 +1865,11 @@ a.text-body.publication-author-link:hover {
     max-height: 11rem !important;
     padding: 0.75rem 0.95rem 0.85rem 1.7rem !important;
     overflow: hidden !important;
-    cursor: grab !important;
+    cursor: url("../images/decorations/cursor-grab.svg") 0 0, grab !important;
+}
+
+#bauhaus-player.bauhaus-floating-player:active {
+    cursor: url("../images/decorations/cursor-grabbing.svg?v=20260607-b8ba621") 0 0, grabbing !important;
 }
 
 #bauhaus-player.bauhaus-floating-player.is-list-open {
@@ -2107,12 +2119,14 @@ a.text-body.publication-author-link:hover {
     #bauhaus-player .bauhaus-list-toggle {
         height: 1.75rem !important;
         font-size: 0.68rem !important;
+    cursor: url("../images/decorations/cursor-click.svg") 0 0, pointer !important;
     }
 
     #bauhaus-player .bauhaus-track-list {
         left: 1.25rem !important;
         right: 0.65rem !important;
         max-height: min(13rem, 48vh) !important;
+    cursor: url("../images/decorations/cursor-click.svg") 0 0, pointer;
     }
 
     #bauhaus-player.is-collapsed {
@@ -2185,6 +2199,7 @@ a.text-body.publication-author-link:hover {
     #bauhaus-player.bauhaus-floating-player.is-list-open {
         max-height: calc(100vh - 1.2rem) !important;
         overflow: visible !important;
+    cursor: url("../images/decorations/cursor-click.svg") 0 0, pointer;
     }
 
     #bauhaus-player .bauhaus-player-toggle {
@@ -2221,6 +2236,7 @@ a.text-body.publication-author-link:hover {
         padding: 0 0.55rem !important;
         font-size: 0.68rem !important;
         margin: 0 !important;
+        cursor: url("../images/decorations/cursor-click.svg") 0 0, pointer !important;
     }
 
     #bauhaus-player .bauhaus-track-title {
@@ -2232,8 +2248,8 @@ a.text-body.publication-author-link:hover {
         font-size: 0.68rem !important;
         line-height: 1.05 !important;
         margin-top: 0.3rem !important;
-        padding-top: 0.1rem;
-        padding-bottom: 0.1rem;
+        padding-top: 0.1rem !important;
+        padding-bottom: 0.1rem !important;
     }
 
     #bauhaus-player .bauhaus-track-list {
@@ -2243,6 +2259,7 @@ a.text-body.publication-author-link:hover {
         max-height: min(13rem, 42vh) !important;
         margin: 0 !important;
         padding-right: 0.3rem !important;
+    cursor: url("../images/decorations/cursor-click.svg") 0 0, pointer !important;
     }
 
     #bauhaus-player .bauhaus-player-controls {
@@ -2382,7 +2399,7 @@ a.text-body.publication-author-link:hover {
     display: grid;
     place-items: center;
     overflow: hidden;
-    cursor: pointer;
+    cursor: url("../images/decorations/cursor-click.svg") 0 0, pointer;
     background:
         linear-gradient(90deg, transparent 0 5%, rgba(0, 0, 0, 0.09) 5% 5.35%, transparent 5.35% 94.65%, rgba(0, 0, 0, 0.09) 94.65% 95%, transparent 95%),
         var(--bauhaus-paper);
@@ -2653,5 +2670,49 @@ body.bauhaus-splash-active {
     #bauhaus-player input,
     #bauhaus-player button {
         touch-action: manipulation !important;
+    }
+}
+
+@media (pointer: fine) {
+    html,
+    body {
+        cursor: url("../images/decorations/cursor.svg") 0 0, auto;
+    }
+
+    a,
+    button,
+    [role="button"],
+    input,
+    select,
+    textarea,
+    label,
+    summary,
+    .nav-link,
+    .bauhaus-list-toggle,
+    .bauhaus-player-button,
+    .bauhaus-player-toggle {
+        cursor: url("../images/decorations/cursor-click.svg") 0 0, pointer;
+    }
+
+    .bauhaus-cursor-trail {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        width: 1.25rem;
+        height: 1.25rem;
+        pointer-events: none;
+        opacity: 0;
+        border: 4px solid var(--bauhaus-ink);
+        border-radius: 50%;
+        background: var(--bauhaus-blue);
+        box-shadow: 4px 4px 0 var(--bauhaus-ink);
+        transform: translate3d(-100px, -100px, 0);
+        transition: opacity 140ms ease;
+        will-change: transform;
+    }
+
+    .bauhaus-cursor-trail.is-visible {
+        opacity: 0.82;
     }
 }
