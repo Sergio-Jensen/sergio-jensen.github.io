@@ -1,7 +1,7 @@
 ---
 title:          "Is productive service intermediate input a good instrument for enhancing the Global Value Chain participation?"
 date:           2025-10-11 00:00:00 +0800
-selected:       true
+selected:       false
 pub:            "Structural Change and Economic Dynamics"
 # pub_pre:        "Working Paper"
 # pub_post:       ' (Under review)'
