@@ -1,6 +1,6 @@
 ---
 title:          "Two-stage graph estimation for complex motifs"
-date:           2026-09-24 00:01:00 +0800
+date:           2026-09-26 00:01:00 +0800
 selected:       true
 pub:            "Statistics & Probability Letters"
 # pub_pre:        "Submitted to "
