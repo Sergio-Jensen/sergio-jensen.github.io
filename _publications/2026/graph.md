@@ -7,7 +7,7 @@ pub:            "Statistics & Probability Letters"
 # pub_post:       ' (Under review)'
 pub_last:       ' <span class="badge badge-pill badge-publication badge-success">1<sup>st</sup> author</span> <span class="badge badge-pill badge-publication badge-success-c">Corr. author</span>
     '
-# pub_vol:        "Vol.203, "
+pub_vol:        "Vol.241, "
 pub_date:       "2026: "
 pub_pp:         "110958."
 
