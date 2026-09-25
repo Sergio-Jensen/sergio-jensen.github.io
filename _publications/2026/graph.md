@@ -21,5 +21,5 @@ links:
   DOI: https://doi.org/10.1016/j.spl.2026.110958
   PDF: /assets/paper/spl-2026-graph.pdf
   SI: /assets/paper/si/spl-2026-graph-si.pdf
-  R: /assets/code/spl-2025-graph.zip
+  R: /assets/code/spl-2026-graph.zip
 ---
