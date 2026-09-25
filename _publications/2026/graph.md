@@ -1,3 +1,4 @@
+---
 title:          "Two-stage graph estimation for complex motifs"
 date:           2026-09-24 00:01:00 +0800
 selected:       true
@@ -21,3 +22,4 @@ links:
   PDF: /assets/paper/spl-2026-graph.pdf
   SI: /assets/paper/si/spl-2026-graph-si.pdf
   R: /assets/paper/code/spl-2025-graph.zip
+---
