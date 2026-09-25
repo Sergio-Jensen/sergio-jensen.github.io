@@ -1,7 +1,7 @@
 ---
 title:          "Knowledge complexity based on coupled equations within the bipartite network"
 date:           2024-06-12 00:01:00 +0800
-selected:       true
+selected:       false
 pub:            "Information Sciences"
 # pub_pre:        "Submitted to "
 # pub_post:       'Under review.'
